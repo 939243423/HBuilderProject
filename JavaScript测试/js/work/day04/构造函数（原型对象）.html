@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function Person(name,age,gender){
+				this.name=name;
+				this.gender=gender;
+				this.age=age;
+//				this.sayName=function(){
+//					alert(this.name);
+//				}
+				
+			}
+			Person.prototype.sayName=function(){
+				alert("this name"+this.name);
+			}
+			var per=new Person("孙悟空",18,"花果山");
+			//console.log(per);
+			per.sayName();
+			//console.log(per.name);
+			//per.sayName();
+			//Person("孙悟空",18,"花果山");
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

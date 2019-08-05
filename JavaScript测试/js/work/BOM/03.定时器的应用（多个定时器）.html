@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+		</style>
+		<script type="text/javascript" src="js/move.js">
+			
+		</script>
+		<script type="text/javascript">
+			window.onload=function(){
+				var box1=document.getElementById("box1");
+				var btn1=document.getElementById("btn1");
+				var btn2=document.getElementById("btn2");
+				var box3=document.getElementById("box3");
+				var btn3=document.getElementById("btn3");
+				
+				btn1.onclick=function(){
+					
+					move(box1,800,50,"width");
+					
+					
+				}
+				btn2.onclick=function(){
+					move(box1,0,10,"left");
+				}
+				
+				
+				btn3.onclick=function(){
+					move(box3,800,20,"width",function(){
+						move(box3,800,20,"height");
+					});
+				}
+		
+			
+			
+					
+			}
+		</script>
+	</head>
+	<body>
+		<div id="outer">
+			
+			
+		<button id="btn1">向右移动</button>
+		<button id="btn2">向左移动</button>
+		<button id="btn3">测试</button>
+		<br /><br /><br />
+		<div id="box1" style="width: 100px; height: 100px ; background-color: #bfc; position: absolute;"></div>
+		<div id="box3" style="width: 100px; height: 100px ; background-color: #bff; position: absolute; top: 200px;"></div>
+		
+		<div id="box2" style="width: 0px; height: 1000px ;  position: absolute; border-left: 1px black solid;top: 0; left: 800px;"></div>
+		
+		
+		</div>
+		
+	</body>
+</html>

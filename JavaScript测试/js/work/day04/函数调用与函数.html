@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function fun(){
+				function fun2(){
+					alert("safhk");
+				}
+				return fun2;
+				
+				
+			}
+			//fun   调用函数对象
+			//fun()  调用函数返回值
+			var a=fun();
+			//输出fun()返回值
+			console.log(a);
+			//输出fun(2)返回值
+			console.log(a());//fun2返回值没有  输出undefined 执行
+			//调用fun(2)
+			a();
+			//调用结果返回不输出
+			fun();
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

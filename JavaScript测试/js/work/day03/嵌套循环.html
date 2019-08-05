@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		span{
+			display: inline-block;
+			width: 80px;
+
+		}
+	</style>
+	<script type="text/javascript">
+		//九九乘法表
+		for(i=1;i<=9;i++){
+			
+			for(j=1;j<=i;j++){
+				//document.write(i+"*"+j+"="+i*j+"&nbsp;&nbsp;&nbsp;");
+				document.write("<span>"+i+"*"+j+"="+i*j+"</span>");
+			}
+			
+			
+			document.write("<br/>");//break;
+		}
+	</script>
+	<body>
+		<span></span>
+	</body>
+</html>

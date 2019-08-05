@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script type="text/javascript">
+//打印1到100所以奇数的和
+//var sum=0;
+//for(var i=1; i<=100;i++){
+//	if(i%2!=0){
+//		console.log(i);
+//		sum=sum+i;
+//	}
+//	
+//}
+//console.log(sum);
+
+
+// 水仙花数     个十百三个的三次方等于本身 且是个三位数
+//parseInt()
+//	for(i=100;i<1000;i++){
+//		//console.log(i);
+//		//获取百位
+//		var bai=parseInt(i/100);
+//		//获取十位
+//		var shi=parseInt((i-bai*100)/10);
+//		
+//		var ge=i%10;
+//		if(bai*bai*bai+shi*shi*shi+ge*ge*ge==i){
+//			console.log(i);
+//			
+//		}
+//	}
+
+//检查用户输入的数是否是  质数  本身和1
+console.time("test");
+//		var num=prompt("请输入一个大于一的数字：");
+//		if(num<=1)
+//		{
+//			alert("该值不合法");
+//			
+//		}
+		for(var i=2;i<=100000;i++)
+		{
+			//判断这个数为质数
+		var flag=true;
+		//遍历2-num的数
+		//i求开方   只需要除以i开方以前的数就可以判断
+			for( var j=2;j<Math.sqrt(i);j++)
+			{
+				if(i%j==0)
+				{
+					flag=false;
+					//及时停住循环 不让做无谓的计算
+					break;
+				}
+			}
+			if(flag){
+			console.log(i);
+	
+}
+		}
+		
+
+console.timeEnd("test");
+	</script>
+	<body>
+	</body>
+</html>

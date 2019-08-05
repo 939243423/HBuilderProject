@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function Person(name,age){
+				this.name=name;
+				this.age=age;
+			}
+			var per=new Person("lufei",18);
+			var per2=new Person("wusuopu",20);
+			var per3=new Person("namei",15);
+			var perArr=[per,per2,per3];
+			
+			
+			Person.prototype.toString=function(){
+				return "person[name="+this.name+",age="+this.age+"]";
+			}
+			
+			//创建一个函数  将 数组封装到这里面  并提取18岁以下的
+			function getAdult(arr){
+				//创建一个新的数组
+				//var newArr=new Array();
+				var newArr=[];
+				//遍历数组
+				for(var i=0;i<arr.length;i++){
+					var a=arr[i];
+					//console.log(arr[i]);
+					if(a.age>=18)
+					{
+					newArr.push(a);
+					}
+				}
+				//如果if不写在这里 则会导致 无法将数组遍历并添加进去
+				
+				
+				return newArr;
+			
+			}
+			var result=getAdult(perArr);
+			console.log(result);
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

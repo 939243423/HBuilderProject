@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+			margin: 0;
+			padding: 0;
+		}
+		#box1{
+			width: 100px;
+			height: 100px;
+			background-color: #BBFFCC;
+			margin: 50px auto;	
+		}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var box1=document.getElementById("box1");
+				document.onclick=function(event){
+					event=event||window.event;//兼容性问题
+					var c=event.clientX;
+					
+				};
+			};
+		</script>
+		
+	</head>
+	<body>
+		<div id="box1"></div>
+	</body>
+</html>

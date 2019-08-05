@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload=function(){
+				//获取box1
+				var box1=document.getElementById("box1");
+				//创建三个事件
+				var img=document.getElementById("img");
+				drag(box1);
+				drag(img);
+				 }
+		
+				function drag(obj){
+					document.onmousedown=function(){
+					event=event||window.event;
+					var ol=event.clientX-box1.offsetLeft;
+			 		var ot=event.clientY-box1.offsetTop;
+			 		
+			 		obj.setCapture&&box1.setCapture();
+			 		
+				 	document.onmousemove=function(event){
+				 		event=event||window.event;
+				 		var left=event.clientX;
+				 		var top=event.clientY;
+//				 		box1.style.left=left+"px";
+//				 		box1.style.top=top+"px";
+//				 		
+				 	
+				 		
+				 		obj.style.left=(left-ol)+"px";
+				 		obj.style.top=(top-ot)+"px";
+				 		
+				 		
+				 	}
+				 	document.onmouseup=function(event){
+				 		document.onmousemove=null;
+				 		document.onmouseup=null;
+				 		obj.releaseCapture&&box1.releaseCapture();
+					}
+				 	return false;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box1" style="width: 200px; height: 200px; background-color: #BBFFCC; position: absolute;">
+			
+		</div>
+		<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+		<p>sasadh</p>
+		<a href="#">sdahknj</a>
+		<img src="../DOM1/img/1.jpg" style="position: absolute;" id="img"/>
+	</body>
+</html>

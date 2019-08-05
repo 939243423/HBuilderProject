@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function Person(name,age,gender){
+				this.name=name;
+				this.gender=gender;
+				this.age=age;
+				this.sayName=function(){
+					alert(this.name);
+				}
+				 
+			}
+			var per=new Person("孙悟空",18,"花果山");
+			var per2=new Person("路飞",18,"东海");
+			Person.prototype.toString=function(){
+				return "person[name="+this.name+"，gender="+this.gender+",age="+18+"]";
+			}
+			console.log(per2);
+			//per.sayName();
+			//console.log(per.name);
+			//per.sayName();
+			//Person("孙悟空",18,"花果山");
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

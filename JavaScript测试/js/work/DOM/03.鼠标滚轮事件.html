@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload=function(){
+				
+			var box1=document.getElementById("box1");
+			
+			box1.onmousewheel=function(event){
+				event=event||window.event;
+				if(event.wheelDelta>0||event.detail<0){
+					//向上滚，变短
+					box1.style.height=box1.clientHeight-10+"px";
+				}else{
+					//向下滚 变长
+					box1.style.height=box1.clientHeight+10+"px";
+				}
+				
+				event.preventDefault&&event.preventDefault();//适用火狐
+					return false;  //去除默认样式
+			}
+			bind(box1,"DOMMouseScroll",box1.onmousewheel);//
+			
+			
+			
+			function bind(obj,eventStr,callback){
+					if(obj.addEventListener){
+					obj.addEventListener(eventStr,callback,false);
+					
+					}
+					else{
+					obj.attachEvent("on"+eventStr,function(){
+						callback.call(obj);
+					});
+					}
+					
+					
+					
+					
+					
+					
+					
+			}
+				
+				
+			}
+			
+//			bind(box1,"DomMouseScroll",box1.)
+			
+			
+			
+		</script>
+	</head>
+	<body style="height: 1000px;">
+		<div id="box1" style="height: 100px; width: 100px; background-color: #BBFFCC;"></div>
+	</body>
+</html>

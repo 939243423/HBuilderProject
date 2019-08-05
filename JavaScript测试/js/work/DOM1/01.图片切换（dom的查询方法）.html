@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#contain{
+				width: 500px;
+				background-color: #bfc;
+				text-align: center;
+				/*position: relative;*/
+				margin: 50px auto;
+				padding: 10px;
+			}
+			#prev{
+				
+				/*position: absolute;*/
+				/*left: 0;*/
+			}
+			#prev{
+				/*position: absolute;*/
+				/*right: -50;*/
+			}
+			 
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				//获得两个button
+				var prev=document.getElementById("prev");
+				var next=document.getElementById("next");
+				var info=document.getElementById("info");
+				
+				var img=document.getElementsByTagName("img")[0];
+				
+				var imgArr=["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg","img/5.jpg"];
+				var index=0;
+				info.innerHTML = "一共"+imgArr.length+"张图片，当前第 "+(index+1)+"张";
+				
+				prev.onclick=function(){
+					index--;
+
+					if(index<0){
+						index=imgArr.length-1;
+					}
+					img.src=imgArr[index];
+					
+					info.innerHTML="一共 "+imgArr.length+" 张图片，当前第 "+(index+1)+" 张";
+				}
+				next.onclick=function(){
+					index++;
+					
+					if(index>imgArr.length-1){
+						index=0;
+					}
+					img.src=imgArr[index];
+					info.innerHTML="一共 "+imgArr.length+" 张图片，当前第 "+(index+1)+" 张";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="contain">
+		<p id="info"></p>
+		<img src="img/1.jpg" alt="冰激凌" />
+		<br />
+		<button id="prev">上一个</button>
+		<button id="next">下一个</button>
+		</div>
+		
+	</body>
+</html>
